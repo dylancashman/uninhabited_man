@@ -12,8 +12,22 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :tag_ids, "Tags" %><br>
+    <%#= f.hidden_field :tag_ids, value: nil %>
+    <% @tags.each do |tag| %>
+      <%= label_tag "tag_#{tag.id}", tag.description %>
+      <%= check_box_tag 'post[tag_ids][]', tag.id, @post.tag_ids.include?(tag.id), id: "tag_#{tag.id}" %><br/>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
     <%= f.label :body %><br>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, size: '60x30' %>
   </div>
   <div class="field">
     <%= f.label :published %><br>
