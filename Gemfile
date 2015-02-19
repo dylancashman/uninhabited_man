@@ -6,7 +6,7 @@ gem 'rails', '4.1.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
-gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap-sass', '~> 3.3.3'
 gem 'sass-rails', '~> 4.0.3'
 gem 'autoprefixer-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -29,6 +29,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'seed-fu'
+
+gem 'devise'
 
 group :test do
   gem 'launchy'

@@ -7,11 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 
-    <!-- Custom styles for this template -->
-    <link href="blog.css" rel="stylesheet">
-
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../../assets/ie10-viewport-bug-workaround.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -25,8 +22,7 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item active" href="#">Home</a>
-          <a class="blog-nav-item" href="#">Still Home</a>
+          <a class="blog-nav-item" href="<%= request.original_url %>">Home</a>
         </nav>
       </div>
     </div>
@@ -47,20 +43,12 @@
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
             <h4>About</h4>
-          </div>
-          <div class="sidebar-module">
-            <h4>Archives</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">TEST</a></li>
-            </ol>
-          </div>
-          <div class="sidebar-module">
-            <h4>Elsewhere</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">GitHub</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Facebook</a></li>
-            </ol>
+            <p>
+              My name is Dylan Cashman, and this is my blog!  I am a Ruby on Rails developer and a Computer Science grad student at Tufts University.  I enjoy web development, computer science, math, teaching, words, numbers, and most other things, too.
+            </p>
+            <a target="_blank" href="https://github.com/dylancashman">Github: dylancashman</a>
+            <br/>
+            <a target="_blank" href="https://twitter.com/dylan_cashman">Twitter: @dylan_cashman</a>
           </div>
         </div><!-- /.blog-sidebar -->
 
@@ -69,17 +57,7 @@
 
     <div class="blog-footer">
       <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-      <p>
-        <a href="#">Back to top</a>
-      </p>
     </div>
 
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <script src="../../assets/js/docs.min.js"></script>
   </body>
 </html>
