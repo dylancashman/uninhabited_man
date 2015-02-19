@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
   resources :posts
 
+  devise_scope :user do
+    get "/heydylan" => "devise/sessions#new", as: :new_user_session
+    post "/heydylan" => "devise/sessions#create", as: :user_session
+    delete "/logout" => "devise/sessions#destroy", as: :destroy_user_session
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
