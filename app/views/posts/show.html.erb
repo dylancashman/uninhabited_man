@@ -6,7 +6,7 @@
 </p>
 
 <p>
-  <%= @post.body %>
+  <%= raw markdown_renderer.render(@post.body) %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) if admin_user? %>
