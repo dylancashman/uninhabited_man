@@ -28,12 +28,12 @@ I didn't like the defaults and wanted to do custom routing, so I didn't call tha
 	  resources.each do |resource|
         mapping = Devise.add_mapping(resource, options)
         # ... other stuff
-        
+
 The first step to understanding this code is remembering that Devise allows you to have multiple resources that act as authenticatable users.  You could have two different Active Record objects, one called a PublicUser, and one called an AdminUser, that shared no functionality between them, and you could define two different devise configurations between them.  That is why this class loops through each of the resources that Devise has been told about.
 
 However, most of us use the default, which is to have a single class called User as a devise resources.  The next method, `add_mapping`, tells the global Devise configuration about that resource, and that method ends up defining the `current_user` method (or, in the case of multiple resources given above, it would define two methods, `current_public_user` and `current_admin_user`). See [`lib/devise.rb`](https://github.com/plataformatec/devise/blob/v3.4.1/lib/devise.rb#L339) and [`lib/devise/controllers/helpers.rb`](https://github.com/plataformatec/devise/blob/v3.4.1/lib/devise/controllers/helpers.rb#L120).
 
-This is surprising!  Metaprogramming should generally only affect the class it is used in.  The assumption being made in the Devise gem is that either all users will use the Devise helper in their routes file, or that users using custom routes wouldn't need the `current_user` method defined for them.  
+This is surprising!  Metaprogramming should generally only affect the class it is used in.  The assumption being made in the Devise gem is that either all users will use the Devise helper in their routes file, or that users using custom routes wouldn't need the `current_user` method defined for them.
 
 To get around this without using the `devise_for` method in my routes, I explicitly added the mappings myself.  Devise already creates an initializer for your devise configuration, so I just placed it in `config/initializers/devise.rb`, at the very end of the file.
 
@@ -41,4 +41,4 @@ To get around this without using the `devise_for` method in my routes, I explici
 
 Since an initializer is called before any of the view/controller code, and it gets called on every request, this accomplishes the same as having it get loaded in the routes file.
 
-To sum up: __When having trouble with a missing method that you usually get from a gem, check out the metaprogramming used in the gem.  The functionality you are missing may come from an unexpected method call in that gem.  In `devise`, the `current_user` method is generally defined by calling `devise_for` in the `config/routes.rb` file.
+To sum up: __When having trouble with a missing method that you usually get from a gem, check out the metaprogramming used in the gem.  The functionality you are missing may come from an unexpected method call in that gem.  In `devise`, the `current_user` method is generally defined by calling `devise_for` in the `config/routes.rb` file.__
