@@ -1,5 +1,4 @@
-<% @posts.each do |post| %>
-  <%= render partial: '/posts/show', locals: { post: post } %>
-<% end %>
+<%= render partial: '/posts/show', locals: { post: @current_post } if @current_post %>
 
 <%= link_to 'New Post', new_post_path if admin_user? %>
+<%= link_to 'View All Posts', posts_path %>

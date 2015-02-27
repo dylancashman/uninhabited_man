@@ -26,3 +26,7 @@ class FeaturesTest < MiniTest::Spec
   include Rails.application.routes.url_helpers
   register_spec_type(/feature test$/, self)
 end
+
+class ActionController::TestCase
+  include Devise::TestHelpers
+end

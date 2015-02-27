@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
   def index
-    @posts = Post.order('created_at desc').all
+    @current_post = Post.order('created_at desc').first
   end
 
 end
