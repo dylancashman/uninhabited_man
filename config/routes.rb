@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :posts
+  resources :site_iterations
 
   devise_scope :user do
     get "/heydylan" => "devise/custom_sessions#new", as: :new_user_session
