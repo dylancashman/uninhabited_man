@@ -1,0 +1,15 @@
+<%= form_for @site_iteration do |f| %>
+  <div class='field'>
+    <%= f.label :screenshot, 'Screenshot' %>
+    <br/>
+    <%= f.file_field :screenshot %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :iteration_title, 'Iteration Title' %>
+    <br/>
+    <%= f.text_field :iteration_title %>
+  </div>
+
+  <%= f.submit "Create" %>
+<% end %>

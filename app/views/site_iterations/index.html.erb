@@ -1,0 +1,8 @@
+<h1>Listing site iterations</h1>
+
+<% @site_iterations.each do |site_iteration| %>
+  <%= render partial: 'site_iteration', locals: { site_iteration: site_iteration } %>
+<% end %>
+<br>
+
+<%= link_to 'New Site Iteration', new_site_iteration_path if admin_user? %>
