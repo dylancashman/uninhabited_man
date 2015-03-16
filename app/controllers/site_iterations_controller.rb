@@ -5,7 +5,7 @@ class SiteIterationsController < ApplicationController
   # GET /site_iterations
   # GET /site_iterations.json
   def index
-    @site_iterations = SiteIteration.all
+    @site_iterations = SiteIteration.order('iteration_number DESC').all
   end
 
   # GET /site_iterations/1

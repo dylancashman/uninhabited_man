@@ -1,7 +1,7 @@
 class CreateSiteIterations < ActiveRecord::Migration
   def self.up
     create_table :site_iterations do |t|
-      t.string :iteration_number
+      t.integer :iteration_number
       t.string :iteration_title
       t.text :iteration_description
       t.datetime :publish_datetime

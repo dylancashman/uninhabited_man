@@ -46,6 +46,7 @@ gem 'devise'
 group :test do
   gem 'launchy'
   gem 'minitest-rails-capybara'
+  gem 'factory_girl_rails'
 end
 
 # Use ActiveModel has_secure_password

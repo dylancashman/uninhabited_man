@@ -1,8 +1,10 @@
-<h1>Listing site iterations</h1>
+<h2>Site Iterations</h2>
+
+<p>Below, you can see the different iterations of this blog as it was developed.  The more recent iterations are displayed at the top.  By clicking on a screenshot, you can see a fuller description of that iteration as well as a list of blog posts that were written while the blog looked like that.</p>
+
+<p>I always appreciated self-documentation, like you see in the <%= link_to 'excellent PDF documentation of the PDF-generating ruby library prawn', 'http://prawnpdf.org/manual.pdf' %>.  One of my goals with this blog is to document the types of decisions I'll be making in evolving this site into a more mature application.  I also think it will be interesting to look back on what it looked like at different points.</p>
 
 <% @site_iterations.each do |site_iteration| %>
   <%= render partial: 'site_iteration', locals: { site_iteration: site_iteration } %>
 <% end %>
-<br>
-
 <%= link_to 'New Site Iteration', new_site_iteration_path if admin_user? %>

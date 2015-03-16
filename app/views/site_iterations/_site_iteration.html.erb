@@ -1,5 +1,24 @@
-<div class="col-md-4">
-  <%= site_iteration.screenshot(:small) %>
-  <br/>
-  <b><%= site_iteration.iteration_title %></b>
-</div><!-- /.blog-post -->
+<div class="iteration-thumbnail">
+  <div class="iteration-container container-fluid">
+    <div class="col-md-6">
+      <%= link_to image_tag(site_iteration.screenshot.url(:medium)), site_iteration_path(site_iteration) %>
+      <br/>
+    </div>
+    <div class="col-md-6">
+      <b>Iteration Title: </b><%= site_iteration.iteration_title %>
+      <br/>
+      <b>Deployed: </b><%= formatted_date_string site_iteration.publish_datetime %>
+      <br/>
+      <b>Description: </b><%= site_iteration.iteration_description %>
+      <br/>
+      <b>Posts: </b>
+      <% if site_iteration.posts.any? %>
+        <% site_iteration.posts.each do |post| %>
+          <ul><%= link_to post.title, post_path(post) %></ul>
+        <% end %>
+      <% else %>
+        <i>None</i>
+      <% end %>
+    </div>
+  </div>
+</div>

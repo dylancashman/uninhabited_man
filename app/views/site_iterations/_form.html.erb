@@ -11,5 +11,17 @@
     <%= f.text_field :iteration_title %>
   </div>
 
+  <div class='field'>
+    <%= f.label :iteration_description, 'Iteration Description' %>
+    <br/>
+    <%= f.text_area :iteration_description, size: '100x10' %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :publish_datetime, 'Published At' %>
+    <br/>
+    <%= f.datetime_select :publish_datetime %>
+  </div>
+
   <%= f.submit "Create" %>
 <% end %>

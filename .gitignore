@@ -17,3 +17,6 @@
 
 # Ignore the secret keys!
 /config/initializers/01secret_keys.rb
+
+# Ignore images
+/public/system/site_iterations/**

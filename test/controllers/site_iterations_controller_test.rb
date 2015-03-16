@@ -1,8 +1,6 @@
 class SiteIterationsControllerTest < ActionController::TestCase
   before do
-    @site_iteration = SiteIteration.create(screenshot_file_name: 'foo',
-                                          screenshot_content_type: 'image/jpeg',
-                                          screenshot_file_size: 100)
+    @site_iteration = FactoryGirl.create(:site_iteration)
   end
 
   #interesting that a pattern like this, without factories or whatever, is like having a
