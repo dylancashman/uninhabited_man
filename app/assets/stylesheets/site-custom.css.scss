@@ -26,7 +26,7 @@
   color: $default-header-color;
 }
 
-.blog-links ul {
+.blog-links > ul {
   list-style-type: none;
   display: block;
   white-space: nowrap;
@@ -48,7 +48,7 @@
 }
 
 .blog-links > ul > li > a:hover {
-  color: $default-hover-text-color;
+  color: lighten($default-text-color, 20%);
 }
 
 /*

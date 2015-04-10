@@ -5,6 +5,13 @@ class Post < ActiveRecord::Base
   belongs_to :site_iteration
   before_save :attach_current_iteration
 
+  has_attached_file :title_image, :styles => { :medium => "300x300>", :thumb => "100x100>", :square => "200x200#" }, :default_url => "/images/:style/missing.png"
+  validates_attachment :title_image,  content_type: { content_type: /\Aimage\/.*\Z/ }
+  
+  def post_date_string
+    created_at.strftime("%D")
+  end
+
   private
   def attach_current_iteration
     self.site_iteration ||= SiteIteration.current_site_iteration

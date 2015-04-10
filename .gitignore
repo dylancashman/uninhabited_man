@@ -20,3 +20,4 @@
 
 # Ignore images
 /public/system/site_iterations/**
+/public/system/posts/**

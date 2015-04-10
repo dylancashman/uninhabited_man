@@ -1,3 +1,37 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ul.short-posts {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.short-posts li {
+  border-style: groove;
+  border-color: $primary-background-color;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+ul.short-posts li:hover {
+  background-color: lighten($primary-background-color, 11%);
+}
+
+.post-tag {
+  background-color: $primary-background-color;
+  border-radius: 1em;
+  color: green;
+  text-align: center;
+}
+
+ul.short-posts > a {
+  text-decoration: none;
+  color: $default-text-color;
+}
+
+/*.short-posts * {
+  border: 1px solid black;
+}*/

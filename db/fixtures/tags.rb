@@ -1,4 +1,4 @@
-Tag.seed(:id,
+Tag.seed(:internal_symbol,
   { description: 'Data Visualization', internal_symbol: 'data_visualization' },
   { description: 'Math', internal_symbol: 'math' },
   { description: 'Web Development', internal_symbol: 'web_development' },

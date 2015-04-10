@@ -1,12 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<strong>Title:</strong>
-<p>
-  <%= @post.title %>
-</p>
-
-<p>
-  <%= raw markdown_renderer.render(@post.body) %>
-</p>
+<%= render partial: '/posts/show', locals: { post: @post } %>
 
 <%= link_to 'Edit', edit_post_path(@post) if admin_user? %>
