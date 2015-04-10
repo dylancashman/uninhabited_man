@@ -4,11 +4,11 @@
 
 .blog-header {
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 0px;
   /*text-align: center;*/
 }
 .blog-title {
-  font-family: 'Abril Fatface', cursive;
+  font-family: $title-font;
   /*text-align: center;*/
   margin-top: 10px;
   margin-bottom: 0;
@@ -26,13 +26,38 @@
   color: $default-header-color;
 }
 
+.blog-links ul {
+  list-style-type: none;
+  display: block;
+  white-space: nowrap;
+  /*text-align: center;*/
+  /*font-family: $title-font;*/
+}
+
+.blog-links > ul > li {
+  font-size: 18px;
+  display: inline-block;
+  word-spacing: 0.1em;
+  margin-left: 1.0em;
+  margin-right: 1.0em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-width: 2px 0 2px 0;
+  border-style: solid;
+  border-color: $default-text-color;
+}
+
+.blog-links > ul > li > a:hover {
+  color: $default-hover-text-color;
+}
+
 /*
  * Main column and sidebar layout
  */
 
 .blog-main {
   font-size: 125%;
-  line-height: 1.5em;
+  line-height: 1.75em;
   padding: 3em 0em 3em 0;
   /*word-spacing: 0.2em;*/
 }
@@ -68,11 +93,11 @@ pre {
 
 @media (min-width: 1200px) {
   .container {
-    width: 80%;
+    width: 85%;
   }
 }
 
 body {
   font-family: 'Merriweather',Georgia,Helvetica,Arial,sans-serif;
-  color: #555;
+  color: $default-text-color;
 }
