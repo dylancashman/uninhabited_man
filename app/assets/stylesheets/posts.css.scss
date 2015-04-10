@@ -9,22 +9,27 @@ ul.short-posts {
 }
 
 ul.short-posts li {
-  border-style: groove;
-  border-color: $primary-background-color;
+  border-style: solid;
+  border-color: lighten($primary-background-color, 18%);
   border-radius: 5px;
   padding-top: 10px;
   padding-bottom: 5px;
 }
 
 ul.short-posts li:hover {
-  background-color: lighten($primary-background-color, 11%);
+  background-color: lighten($secondary-background-color, 30%);
 }
 
 .post-tag {
-  background-color: $primary-background-color;
+  background-color: lighten($primary-background-color, 15%);
   border-radius: 1em;
+  margin: 3px;
   color: green;
   text-align: center;
+}
+
+li:hover .post-tag {
+  background-color: lighten($primary-background-color, 5%);
 }
 
 ul.short-posts > a {
