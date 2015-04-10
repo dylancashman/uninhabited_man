@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>UninhabitedMan</title>
+  <link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -21,19 +23,14 @@
 
     <div class="blog-masthead">
       <div class="container">
-        <nav class="blog-nav">
-          <a class="blog-nav-item" href="<%= root_url %>">Home</a>
-          <a class="blog-nav-item" href="<%= site_iterations_path %>">Site Iterations</a>
-        </nav>
+        <div class='blog-header'>
+          <h1 class="blog-title"><%= link_to "Uninhabited Man", root_url %></h1>
+          <p class="lead blog-description">Semi-conscious thoughts from a sort-of person.</p>
+        </div>
       </div>
     </div>
 
     <div class="container">
-
-      <div class="blog-header">
-        <h1 class="blog-title">Uninhabited Man</h1>
-        <p class="lead blog-description">Semi-conscious thoughts from a sort-of person.</p>
-      </div>
 
       <div class="row">
 
