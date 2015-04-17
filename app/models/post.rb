@@ -12,6 +12,10 @@ class Post < ActiveRecord::Base
     created_at.strftime("%D")
   end
 
+  def to_s
+    title
+  end
+
   private
   def attach_current_iteration
     self.site_iteration ||= SiteIteration.current_site_iteration

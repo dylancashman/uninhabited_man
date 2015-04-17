@@ -15,12 +15,13 @@ class SiteIterationsController < ApplicationController
 
   # GET /site_iterations/new
   def new
-    @tags = Tag.all
+    setup_form
     @site_iteration = SiteIteration.new
   end
 
   # GET /site_iterations/1/edit
   def edit
+    setup_form
   end
 
   # POST /site_iterations
@@ -33,6 +34,7 @@ class SiteIterationsController < ApplicationController
         format.html { redirect_to @site_iteration, notice: 'Site Iteration was successfully created.' }
         format.json { render :show, status: :created, location: @site_iteration }
       else
+        setup_form
         format.html { render :new }
         format.json { render json: @site_iteration.errors, status: :unprocessable_entity }
       end
@@ -47,6 +49,7 @@ class SiteIterationsController < ApplicationController
         format.html { redirect_to @site_iteration, notice: 'Site Iteration was successfully updated.' }
         format.json { render :show, status: :ok, location: @site_iteration }
       else
+        setup_form
         format.html { render :edit }
         format.json { render json: @site_iteration.errors, status: :unprocessable_entity }
       end
@@ -64,6 +67,11 @@ class SiteIterationsController < ApplicationController
   end
 
   private
+    def setup_form
+      @tags = Tag.all
+      @referential_posts = Post.order('created_at DESC').first(10).map{|x| [x.to_s, x.id]}
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_site_iteration
       @site_iteration = SiteIteration.find(params[:id])
@@ -71,6 +79,6 @@ class SiteIterationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def site_iteration_params
-      params.require(:site_iteration).permit(:iteration_title, :iteration_description, :referential_post_id, :screenshot)
+      params.require(:site_iteration).permit(:iteration_title, :iteration_description, :referential_post_id, :screenshot, :publish_datetime)
     end
 end
