@@ -8,6 +8,10 @@ class Post < ActiveRecord::Base
   has_attached_file :title_image, :styles => { :medium => "300x300>", :thumb => "100x100>", :square => "200x200#" }, :default_url => "/images/:style/missing.png"
   validates_attachment :title_image,  content_type: { content_type: /\Aimage\/.*\Z/ }
   
+  # give better urls like posts/my-interesting-post instead of posts/12
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :finders]
+
   def post_date_string
     created_at.strftime("%D")
   end
