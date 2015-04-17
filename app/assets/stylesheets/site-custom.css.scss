@@ -1,0 +1,103 @@
+/*
+ * Blog name and description
+ */
+
+.blog-header {
+  padding-top: 10px;
+  padding-bottom: 0px;
+  /*text-align: center;*/
+}
+.blog-title {
+  font-family: $title-font;
+  /*text-align: center;*/
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 80px;
+  font-weight: normal;
+  letter-spacing: -0.05em;
+  word-spacing: 0.3em;
+}
+.blog-description {
+  font-size: 20px;
+}
+
+.blog-header a {
+  text-decoration: none;
+  color: $default-header-color;
+}
+
+.blog-links > ul {
+  list-style-type: none;
+  display: block;
+  white-space: nowrap;
+  /*text-align: center;*/
+  /*font-family: $title-font;*/
+}
+
+.blog-links > ul > li {
+  font-size: 18px;
+  display: inline-block;
+  word-spacing: 0.1em;
+  margin-left: 1.0em;
+  margin-right: 1.0em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-width: 2px 0 2px 0;
+  border-style: solid;
+  border-color: $default-text-color;
+}
+
+.blog-links > ul > li > a:hover {
+  color: lighten($default-text-color, 20%);
+}
+
+/*
+ * Main column and sidebar layout
+ */
+
+.blog-main {
+  font-size: 125%;
+  line-height: 1.75em;
+  padding: 3em 0em 3em 0;
+  /*word-spacing: 0.2em;*/
+}
+
+.blog-main p {
+  text-indent: 1em;
+  margin-top: 0em;
+  margin-bottom: 2em;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 0;
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  font-weight: normal;
+  color: $default-header-color;
+  letter-spacing: -0.03em;
+  word-spacing: -0.05em;
+}
+
+pre {
+  margin-top: 0em;
+  margin-bottom: 2em;
+}
+
+/*
+ * Override Bootstrap's default container.
+ */
+
+@media (min-width: 1200px) {
+  .container {
+    width: 85%;
+  }
+}
+
+body {
+  font-family: 'Merriweather',Georgia,Helvetica,Arial,sans-serif;
+  color: $default-text-color;
+}

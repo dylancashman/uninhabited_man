@@ -23,5 +23,11 @@
     <%= f.datetime_select :publish_datetime %>
   </div>
 
+  <div class='field'>
+    <%= f.label :referential_post, 'Referential Post' %>
+    <br/>
+    <%= f.select :referential_post_id, @referential_posts %>
+  </div>
+
   <%= f.submit "Create" %>
 <% end %>

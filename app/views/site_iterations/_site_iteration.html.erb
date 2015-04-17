@@ -13,9 +13,11 @@
       <br/>
       <b>Posts: </b>
       <% if site_iteration.posts.any? %>
-        <% site_iteration.posts.each do |post| %>
-          <ul><%= link_to post.title, post_path(post) %></ul>
-        <% end %>
+        <ul>
+          <% site_iteration.posts.each do |post| %>
+            <li><%= link_to post.title, post_path(post) %></li>
+          <% end %>
+        </ul>
       <% else %>
         <i>None</i>
       <% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150305010529) do
+ActiveRecord::Schema.define(version: 20150410211000) do
 
   create_table "post_tags", force: true do |t|
     t.integer  "post_id"
@@ -27,12 +27,17 @@ ActiveRecord::Schema.define(version: 20150305010529) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "site_iteration_id"
+    t.string   "title_image_file_name"
+    t.string   "title_image_content_type"
+    t.integer  "title_image_file_size"
+    t.datetime "title_image_updated_at"
+    t.text     "short_description"
   end
 
   add_index "posts", ["site_iteration_id"], name: "index_posts_on_site_iteration_id"
 
   create_table "site_iterations", force: true do |t|
-    t.string   "iteration_number"
+    t.integer  "iteration_number"
     t.string   "iteration_title"
     t.text     "iteration_description"
     t.datetime "publish_datetime"

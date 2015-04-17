@@ -1,0 +1,22 @@
+<div class="container-fluid short-post">
+  <div class="col-md-4 short-post-picture">
+    <% if post.title_image.exists? %>
+      <%= image_tag(post.title_image.url(:square)) %><br/>
+    <% end %>
+    <div class="post-tags">
+      <% post.tags.each do |tag| %>
+        <div class="post-tag">
+          <%= tag %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <i><%= post.post_date_string %></i><br/>
+    <b><%= post.title %></b><br/>
+    <%= post.short_description %><br/>
+    <% if admin_user? %>
+      <%= link_to "EDIT POST", edit_post_path(post) %>
+    <% end %>
+  </div>
+</div>
