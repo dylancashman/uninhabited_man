@@ -26,7 +26,7 @@
   <div class='field'>
     <%= f.label :referential_post, 'Referential Post' %>
     <br/>
-    <%= f.select :referential_post_id, @referential_posts %>
+    <%= f.select :referential_post_id, @referential_posts, include_blank: true %>
   </div>
 
   <%= f.submit "Create" %>

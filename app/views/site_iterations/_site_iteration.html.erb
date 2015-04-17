@@ -1,11 +1,19 @@
 <div class="iteration-thumbnail">
   <div class="iteration-container container-fluid">
     <div class="col-md-6">
-      <%= link_to image_tag(site_iteration.screenshot.url(:medium)), site_iteration_path(site_iteration) %>
+      <% if site_iteration.referential_post %>
+        <%= link_to image_tag(site_iteration.screenshot.url(:medium)), post_path(site_iteration.referential_post) %>
+      <% else %>
+        <%= image_tag(site_iteration.screenshot.url(:medium)) %>
+      <% end %>
       <br/>
     </div>
     <div class="col-md-6">
-      <b>Iteration Title: </b><%= site_iteration.iteration_title %>
+      <% if site_iteration.referential_post %> 
+        <b>Iteration Title: </b><%= link_to site_iteration.iteration_title, post_path(site_iteration.referential_post) %>
+      <% else %>
+        <b>Iteration Title: </b><%= site_iteration.iteration_title %>
+      <% end %>
       <br/>
       <b>Deployed: </b><%= formatted_date_string site_iteration.publish_datetime %>
       <br/>
